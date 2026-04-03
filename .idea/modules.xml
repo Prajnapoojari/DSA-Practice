@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/DSA Questions.iml" filepath="$PROJECT_DIR$/DSA Questions.iml" />
-=======
+
+
       <module fileurl="file://$PROJECT_DIR$/DSA.iml" filepath="$PROJECT_DIR$/DSA.iml" />
->>>>>>> acd2b23 (initial commit)
+
     </modules>
   </component>
 </project>
