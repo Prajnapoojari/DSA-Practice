@@ -3,7 +3,7 @@ public class Rotate
 {
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5, 6, 7};
-        int d = 2;
+        int d = 5;
         for (int x = 0, y = arr.length - 1; y > x; x++, y--) {
             swap(arr, x, y);
         }
