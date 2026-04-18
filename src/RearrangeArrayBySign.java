@@ -2,51 +2,52 @@ import java.util.*;
 
 public class RearrangeArrayBySign {
 
-    void rearrange(ArrayList<Integer> arr) {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(-1, 2, -3, 4, -5, 6, 4, 5));
 
         ArrayList<Integer> temp = new ArrayList<>();
 
-        int positiveIndex = getIndex(0, true, arr);
-        int negativeIndex = getIndex(0, false, arr);
+        int positiveIndex = get(0, true, arr);
+        int negativeIndex = get(0, false, arr);
 
-        // alternate elements
+        // alternate positive and negative
         while (positiveIndex < arr.size() && negativeIndex < arr.size()) {
 
             temp.add(arr.get(positiveIndex));
-            positiveIndex = getIndex(positiveIndex + 1, true, arr);
+            positiveIndex = get(positiveIndex + 1, true, arr);
 
             temp.add(arr.get(negativeIndex));
-            negativeIndex = getIndex(negativeIndex + 1, false, arr);
+            negativeIndex = get(negativeIndex + 1, false, arr);
         }
 
-        // add remaining positives
+        // remaining positives
         while (positiveIndex < arr.size()) {
             temp.add(arr.get(positiveIndex));
-            positiveIndex = getIndex(positiveIndex + 1, true, arr);
+            positiveIndex = get(positiveIndex + 1, true, arr);
         }
 
-        // add remaining negatives
+        // remaining negatives
         while (negativeIndex < arr.size()) {
             temp.add(arr.get(negativeIndex));
-            negativeIndex = getIndex(negativeIndex + 1, false, arr);
+            negativeIndex = get(negativeIndex + 1, false, arr);
         }
 
-        arr.clear();
-        arr.addAll(temp);
+        System.out.println(temp);
     }
 
-    int getIndex(int x, boolean positive, ArrayList<Integer> arr) {
+    // helper method
+    static int get(int x, boolean positive, ArrayList<Integer> arr) {
+        while (x < arr.size()) {
 
-        if (positive) {
-            while (x < arr.size() && arr.get(x) < 0) {
-                x++;
-            }
-        } else {
-            while (x < arr.size() && arr.get(x) >= 0) {
-                x++;
-            }
+            if (positive && arr.get(x) >= 0)
+                return x;
+
+            if (!positive && arr.get(x) < 0)
+                return x;
+
+            x++;
         }
-
-        return x;
+        return arr.size();
     }
 }
