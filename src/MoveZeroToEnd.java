@@ -1,5 +1,6 @@
 public class MoveZeroToEnd {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         int arr[]={1,0,2,0,3,0,4};
         int k=1;
         for(int i=0; i<arr.length && k<arr.length; i++)
@@ -28,6 +29,7 @@ public class MoveZeroToEnd {
             System.out.print(arr[i]+" ");
         }
     }
+
     public static void swap(int arr[], int i, int k)
     {
         int temp=arr[i];
