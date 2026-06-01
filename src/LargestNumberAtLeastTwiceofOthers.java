@@ -1,8 +1,9 @@
 public class LargestNumberAtLeastTwiceofOthers {
     public static void main(String[] args) {
-        int arr[]={3,6,1,0};
-        int max=0; int index=0;
-        for(int i =0; i<arr.length; i++)
+        int arr[]={3, 6, 7,2};
+        int max=arr[0];
+        int index=0;
+        for(int i=1; i<arr.length; i++)
         {
             if(arr[i]>max)
             {
@@ -20,7 +21,9 @@ public class LargestNumberAtLeastTwiceofOthers {
                     return;
                 }
             }
+
         }
         System.out.println(index);
     }
 }
+
