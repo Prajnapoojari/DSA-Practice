@@ -3,20 +3,25 @@ import java.util.Scanner;
 public class PalindromeCheck {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        System.out.println("Enter the String to check palindrome:");
+        System.out.println("Enter  to check palindrome:");
         String input= sc.nextLine();
-        String originalString= input.toLowerCase().replace(" ","");
-        String reversedString="";
-        for(int i=originalString.length()-1; i>=0; i--)
+
+        String reversed="";
+        for(int i=input.length()-1; i>=0; i--)
         {
-            reversedString= reversedString+originalString.charAt(i);
+            reversed=reversed+input.charAt(i);
         }
-        if(originalString.equals(reversedString))
+
+
+        if(input.equals(reversed))
+
         {
-            System.out.println("This String is Palindrome: " + originalString);
+            System.out.println("The number is a palindrome.");
         }
-        else {
-            System.out.println("This String is not a Palindrome: " + originalString);
+        else
+        {
+            System.out.println("The number is not a palindrome.");
         }
+
     }
 }
